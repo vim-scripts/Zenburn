@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Jani Nurminen <jani.nurminen@intellitel.com>
-" Last Change:	$Id: zenburn.vim,v 1.10 2002/09/14 17:13:03 jnurmine Exp $
+" Last Change:	$Id: zenburn.vim,v 1.11 2002/09/15 21:16:10 jnurmine Exp $
 " URL:		Not yet...
 "
 " Nothing too fancy, just some alien fruit salad to keep you in the zone.
@@ -17,6 +17,7 @@
 " TODO
 "   - IME colouring (CursorIM)
 "   - obscure syntax groups: check and colourize
+"   - add more groups if necessary
 
 set background=dark
 hi clear          
@@ -34,21 +35,20 @@ hi Cursor          guifg=#000d18 guibg=#8faf9f gui=bold
 hi Debug           guifg=#dca3a3 gui=bold
 hi Define          guifg=#ffcfaf gui=bold
 hi Delimiter       guifg=#8f8f8f
-hi DiffAdd         guibg=#613c46
+hi DiffAdd         guifg=#709080 guibg=#313c36 gui=bold
 hi DiffChange      guibg=#333333
-hi DiffDelete      guifg=#333333 guibg=#464646 gui=none
-hi DiffText        guifg=#ffffff guibg=#1f1f1f gui=bold
+hi DiffDelete      guifg=#333333 guibg=#464646
+hi DiffText        guifg=#ecbcbc guibg=#41363c gui=bold
 hi Directory       guifg=#dcdccc gui=bold
-" hi Normal          guifg=#dcdccc guibg=#3f3f3f
 " hi Error           guifg=#ef9f9f guibg=#201010 gui=bold  " a bit different
 hi Error           guifg=#e37170 guibg=#332323 gui=none
 hi ErrorMsg        guifg=#60b48a guibg=#3f3f3f gui=bold
-hi Exception       guifg=#8fffff gui=underline
+hi Exception       guifg=#c3bf9f gui=bold
 hi Float           guifg=#c0bed1
 hi FoldColumn      guifg=#93b3a3 guibg=#3f4040
 hi Folded          guifg=#93b3a3 guibg=#3f4040
-hi Function        guifg=#ffff8f
-hi Identifier      guifg=#ffffff
+hi Function        guifg=#efef8f
+hi Identifier      guifg=#efdcbc
 hi Include         guifg=#ffcfaf gui=bold
 hi IncSearch       guibg=#f8f893 guifg=#385f38
 hi Keyword         guifg=#f0dfaf gui=bold
@@ -67,19 +67,19 @@ hi Question        guifg=#ffffff gui=bold
 hi Repeat          guifg=#ffd7a7 gui=bold
 hi Search          guifg=#ffffe0 guibg=#385f38
 hi SpecialChar     guifg=#dca3a3 gui=bold
-hi SpecialComment  guifg=#dca3a3 gui=bold
+hi SpecialComment  guifg=#82a282 gui=bold
 hi Special         guifg=#cfbfaf
 hi SpecialKey      guifg=#9ece9e
 hi Statement       guifg=#e3ceab guibg=#3f3f3f gui=none
 hi StatusLine      guifg=#1e2320 guibg=#acbc90
 hi StatusLineNC    guifg=#2e3330 guibg=#88b090
-hi StorageClass    guifg=#ffffff gui=bold
+hi StorageClass    guifg=#c3bf9f gui=bold
 hi String          guifg=#cc9393
 hi Structure       guifg=#ffffaf gui=bold
 hi Tag             guifg=#dca3a3 gui=bold
 hi Title           guifg=#ffffff guibg=#3f3f3f gui=bold
 hi Todo            guifg=#7faf8f guibg=#3f3f3f gui=bold
-hi Typedef         guifg=#ffffff gui=bold,underline
+hi Typedef         guifg=#dfe4cf gui=bold
 hi Type            guifg=#dfdfbf gui=bold
 hi Underlined      guifg=#dcdccc guibg=#3f3f3f gui=underline
 hi VertSplit       guifg=#303030 guibg=#688060
