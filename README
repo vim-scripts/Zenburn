@@ -1,0 +1,10 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=415
+
+This colour scheme is intended to be pleasant for the eyes when working in low-light conditions. The low contrast will reduce eyestrain.
+
+If you like to work in a darkened room with a fullscreen Vim, this is for you! Even if you don't, try this one out :-)
+
+There is now a higher-contrast mode (with darker background) which is enabled via ":let g:zenburn_high_Contrast=1" then ":colors zenburn". See the syntax file itself for further options.
+
+Zenburn official site: http://slinky.imukuppi.org/zenburnpage/
+Zenburn screenshot: http://slinky.imukuppi.org/zenburn/
