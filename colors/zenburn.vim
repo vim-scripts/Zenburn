@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
-" Last Change:  $Id: zenburn.vim,v 2.2 2008/07/10 19:51:09 slinky Exp slinky $
+" Last Change:  $Id: zenburn.vim,v 2.3 2008/07/30 17:34:37 slinky Exp $
 " URL:      	http://slinky.imukuppi.org/zenburnpage/
 " License:      GPL
 "
@@ -21,6 +21,7 @@
 "  - Kurt Maier - 256 color console coloring, low and high contrast toggle,
 "                 bug fixing
 "  - Charlie - spotted too bright StatusLine in non-high contrast mode
+"  - Pablo Castellazzi - CursorLine fix for 256 color mode
 "
 " CONFIGURABLE PARAMETERS:
 " 
@@ -184,6 +185,8 @@ if &t_Co > 255
     hi VisualNOS       ctermfg=236   ctermbg=210     cterm=bold
     hi WarningMsg      ctermfg=15    ctermbg=236     cterm=bold
     hi WildMenu        ctermbg=236   ctermfg=194     cterm=bold
+    hi CursorLine      ctermbg=236   cterm=none
+
     if exists("g:zenburn_high_Contrast")
         hi Normal ctermfg=188 ctermbg=234
     else
