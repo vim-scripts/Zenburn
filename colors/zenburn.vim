@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
-" Last Change:  $Id: zenburn.vim,v 2.3 2008/07/30 17:34:37 slinky Exp $
+" Last Change:  $Id: zenburn.vim,v 2.4 2008/11/18 20:43:18 slinky Exp $
 " URL:      	http://slinky.imukuppi.org/zenburnpage/
 " License:      GPL
 "
@@ -22,6 +22,7 @@
 "                 bug fixing
 "  - Charlie - spotted too bright StatusLine in non-high contrast mode
 "  - Pablo Castellazzi - CursorLine fix for 256 color mode
+"  - Tim Smith - force dark background
 "
 " CONFIGURABLE PARAMETERS:
 " 
@@ -45,6 +46,12 @@
 "   colouring for Include, use
 "     
 "      let g:zenburn_alternate_Include = 1
+"
+" * Work-around to a Vim bug, it seems to misinterpret ctermfg and 234 and 237
+"   as light values, and sets background to light for some people. If you have
+"   this problem, use:
+"
+"      let g:zenburn_force_dark_Background = 1
 "
 " * To turn the parameter(s) back to defaults, use UNLET:
 "
@@ -187,6 +194,16 @@ if &t_Co > 255
     hi WildMenu        ctermbg=236   ctermfg=194     cterm=bold
     hi CursorLine      ctermbg=236   cterm=none
 
+    " spellchecking, always "bright" background
+    hi SpellLocal ctermfg=14  ctermbg=237
+    hi SpellBad   ctermfg=9   ctermbg=237
+    hi SpellCap   ctermfg=12  ctermbg=237
+    hi SpellRare  ctermfg=13  ctermbg=237
+  
+    " pmenu
+    hi PMenu      ctermfg=248  ctermbg=0
+    hi PMenuSel   ctermfg=223 ctermbg=235
+
     if exists("g:zenburn_high_Contrast")
         hi Normal ctermfg=188 ctermbg=234
     else
@@ -212,6 +229,14 @@ if &t_Co > 255
         hi warningmsg      ctermbg=236
         hi wildmenu        ctermbg=236
     endif
+endif
+
+if exists("g:zenburn_force_dark_Background")
+    " Force dark background, because of a bug in VIM:  VIM sets background
+    " automatically during "hi Normal ctermfg=X"; it misinterprets the high
+    " value (234 or 237 above) as a light color, and wrongly sets background to
+    " light.  See ":help highlight" for details.
+    set background=dark
 endif
 
 if exists("g:zenburn_high_Contrast")
