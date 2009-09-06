@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
-" Last Change:  $Id: zenburn.vim,v 2.4 2008/11/18 20:43:18 slinky Exp $
+" Last Change:  $Id: zenburn.vim,v 2.5 2009/09/06 08:51:59 slinky Exp slinky $
 " URL:      	http://slinky.imukuppi.org/zenburnpage/
 " License:      GPL
 "
@@ -23,6 +23,7 @@
 "  - Charlie - spotted too bright StatusLine in non-high contrast mode
 "  - Pablo Castellazzi - CursorLine fix for 256 color mode
 "  - Tim Smith - force dark background
+"  - John Gabriele - spotted bad Ignore-group handling
 "
 " CONFIGURABLE PARAMETERS:
 " 
@@ -33,6 +34,14 @@
 "   contrast Zenburn, use:
 "
 "      let g:zenburn_high_Contrast = 1
+"
+" * For example, Vim help files uses the Ignore-group for the pipes in tags 
+"   like "|somelink.txt|". By default, the pipes are not visible, as they
+"   map to Ignore group. If you wish to enable coloring of the Ignore group,
+"   set the following parameter to 1. Warning, it might make some syntax files
+"   look strange.
+"
+"      let g:zenburn_color_also_Ignore = 1
 "
 " * To get more contrast to the Visual selection, use
 "   
@@ -296,4 +305,11 @@ else
     " new, less contrasted one
     hi Include         guifg=#dfaf8f gui=bold
 endif
-    " TODO check for more obscure syntax groups that they're ok
+
+if exists("g:zenburn_color_also_Ignore")
+    " color the Ignore groups
+    " note: if you get strange coloring for your files, turn this off (unlet)
+    hi Ignore guifg=#545a4f
+endif
+    
+" TODO check for more obscure syntax groups that they're ok
