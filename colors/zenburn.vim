@@ -1,6 +1,6 @@
 " Vim color file
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
-" Last Change:  $Id: zenburn.vim,v 2.19 2011/04/17 10:11:29 slinky Exp slinky $
+" Last Change:  $Id: zenburn.vim,v 2.21 2011/04/26 12:13:41 slinky Exp slinky $
 " URL:          http://slinky.imukuppi.org/zenburnpage/
 " License:      GNU GPL <http://www.gnu.org/licenses/gpl.html>
 "
@@ -40,9 +40,11 @@
 "                    unify CursorColumn colour
 "  - Martin Langasek - clarify the license, whitespace fixes
 "  - Marcin Szamotulski - support autocomplete for Zenburn configuration
-"    parameters
+"                         parameters
 "  - Clayton Parker (claytron) - Convinced by Kurt Maier to use Zenburn. Point
 "    out issues with LineNr, fix directory styles, and their usage in MacVim.
+"  - Paweł Piekarski - Spotted bad FoldColumn and TabLine. Made better 
+"                      FoldColumn colors, fixed TabLine colors.
 "
 " CONFIGURABLE PARAMETERS:
 "
@@ -267,8 +269,6 @@ if &t_Co > 255
     hi ErrorMsg        ctermfg=115   ctermbg=236     cterm=bold
     hi Exception       ctermfg=249   cterm=bold
     hi Float           ctermfg=251
-    hi FoldColumn      ctermfg=109   ctermbg=238
-    hi Folded          ctermfg=109   ctermbg=238
     hi Function        ctermfg=228
     hi Identifier      ctermfg=223
     hi IncSearch       ctermbg=228   ctermfg=238
@@ -339,8 +339,6 @@ if &t_Co > 255
         hi diffdelete      ctermbg=238
         hi difftext        ctermbg=237
         hi errormsg        ctermbg=237
-        hi foldcolumn      ctermbg=238
-        hi folded          ctermbg=238
         hi incsearch       ctermbg=228
         hi linenr          ctermbg=235
         hi search          ctermbg=238
@@ -491,7 +489,6 @@ endif
 
 " new tabline and fold column
 if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
-    " TODO Align with 256-color
     hi FoldColumn    guibg=#161616
     hi Folded        guibg=#161616
     hi TabLine       guifg=#88b090 guibg=#313633 gui=none
@@ -501,11 +498,11 @@ if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
     hi SpecialKey    guibg=#242424
     
     if &t_Co > 255
-        hi FoldColumn    ctermbg=233
-        hi Folded        ctermbg=233
-        hi TabLine       ctermbg=234 ctermfg=187 cterm=none
-        hi TabLineSel    ctermbg=236 ctermfg=229 cterm=none
-        hi TabLineFill   ctermbg=233 ctermfg=233
+        hi FoldColumn    ctermbg=233 ctermfg=109
+        hi Folded        ctermbg=233 ctermfg=109
+        hi TabLine       ctermbg=236 ctermfg=108 cterm=none
+        hi TabLineSel    ctermbg=235 ctermfg=186 cterm=bold
+        hi TabLineFill   ctermbg=236 ctermfg=236
     endif
 else
     hi FoldColumn    guibg=#333333
@@ -517,8 +514,8 @@ else
     hi SpecialKey    guibg=#444444
 
     if &t_Co > 255
-        hi FoldColumn    ctermbg=236
-        hi Folded        ctermbg=236
+        hi FoldColumn    ctermbg=236 ctermfg=109
+        hi Folded        ctermbg=236 ctermfg=109
         hi TabLine       ctermbg=235 ctermfg=187 cterm=none
         hi TabLineSel    ctermbg=236 ctermfg=229 cterm=bold
         hi TabLineFill   ctermbg=233 ctermfg=233
